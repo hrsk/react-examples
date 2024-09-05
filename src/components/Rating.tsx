@@ -1,13 +1,21 @@
 import React from "react";
 
-function Star(props: any) {
+type StarPropsType = {
+    selected: boolean
+}
+function Star(props: StarPropsType) {
 
     console.log('Star rendered')
 
     return props.selected ? <span><b>star </b></span> : <span>star </span>
 }
 
-export function Rating(props: any) {
+type RatingValueType = 0 | 1 | 2 | 3 | 4 | 5
+type RatingPropsType = {
+    value: RatingValueType
+}
+
+export function Rating(props: RatingPropsType) {
 
     console.log('Rating rendered')
 
