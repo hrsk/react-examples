@@ -3,7 +3,11 @@ import './App.css';
 import {Accordion} from "./components/Accordion";
 import {Rating, RatingValueType, RatingWithCallbackValue, RatingWithPropsValue} from "./components/Rating";
 import {OnOff} from "./components/OnOff";
-import {UncontrolledAccordion} from "./components/UncontrolledAccordion";
+import {
+    UncontrolledAccordionWithButton,
+    UncontrolledAccordionWithCallbackValue,
+    UncontrolledAccordionWithPropsValue
+} from "./components/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating";
 
 function App() {
@@ -34,9 +38,13 @@ function App() {
             {/*<OnOff on={true}/>*/}
             <OnOff/>
 
-            <UncontrolledAccordion title={'Uncontrolled MENU'}/>
 
             <UncontrolledRating/>
+
+            ***
+            <UncontrolledAccordionWithButton title={'UncontrolledAccordionWithButton'}/>
+            <UncontrolledAccordionWithCallbackValue title={'UncontrolledAccordionWithCallbackValue'}/>
+            <UncontrolledAccordionWithPropsValue title={'UncontrolledAccordionWithPropsValue'}/>
         </div>
     );
 }
