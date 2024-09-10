@@ -8,7 +8,7 @@ import {
     UncontrolledAccordionWithCallbackValue,
     UncontrolledAccordionWithPropsValue
 } from "./components/UncontrolledAccordion";
-import {UncontrolledRating} from "./components/UncontrolledRating";
+import {UncontrolledRatingWithCallbackValue, UncontrolledRatingWithPropsValue} from "./components/UncontrolledRating";
 
 function App() {
 
@@ -39,7 +39,8 @@ function App() {
             <OnOff/>
 
 
-            <UncontrolledRating/>
+            <UncontrolledRatingWithPropsValue/>
+            <UncontrolledRatingWithCallbackValue/>
 
             ***
             <UncontrolledAccordionWithButton title={'UncontrolledAccordionWithButton'}/>
