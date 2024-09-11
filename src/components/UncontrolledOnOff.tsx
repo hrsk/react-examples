@@ -1,9 +1,8 @@
-type PropsType = {
-    on: boolean
-    setSwitch: (on: boolean) => void
-}
+import {useState} from "react";
 
-export const OnOff = (props: PropsType) => {
+export const UncontrolledOnOff = () => {
+
+    const [on, setSwitch] = useState<boolean>(false);
 
     const onStyle = {
         display: 'inline-block',
@@ -11,7 +10,8 @@ export const OnOff = (props: PropsType) => {
         border: 'solid 2px black',
         width: '100px',
         height: '35px',
-        backgroundColor: props.on ? 'green' : '',
+        // backgroundColor: props.on ? 'green' : '',
+        backgroundColor: on ? 'green' : '',
     }
     const offStyle = {
         display: 'inline-block',
@@ -19,7 +19,8 @@ export const OnOff = (props: PropsType) => {
         border: 'solid 2px black',
         width: '100px',
         height: '35px',
-        backgroundColor: props.on ? '' : 'red',
+        // backgroundColor: props.on ? '' : 'red',
+        backgroundColor: on ? '' : 'red',
     }
     const indicatorStyle = {
         display: 'inline-block',
@@ -27,15 +28,15 @@ export const OnOff = (props: PropsType) => {
         height: '35px',
         border: 'solid 2px black',
         borderRadius: '15px',
-        backgroundColor: props.on ? 'green' : 'red'
+        backgroundColor: on ? 'green' : 'red'
     }
 
     const switchOnHandler = () => {
-        props.setSwitch(true)
+        setSwitch(true)
     }
 
     const switchOffHandler = () => {
-        props.setSwitch(false)
+        setSwitch(false)
     }
 
     return (
