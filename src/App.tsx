@@ -53,8 +53,8 @@ function App() {
             {/*<OnOff on={on} setSwitch={setSwitchOn}/>*/}
             <UncontrolledOnOff/>
 
-            <UncontrolledRatingWithPropsValue/>
-            <UncontrolledRatingWithCallbackValue/>
+            {/*<UncontrolledRatingWithPropsValue/>*/}
+            {/*<UncontrolledRatingWithCallbackValue/>*/}
 
             <UncontrolledAccordion title={'UncontrolledAccordion'} collapsed={true}/>
             <UncontrolledAccordionWithButton title={'UncontrolledAccordionWithButton'}/>
