@@ -1,6 +1,10 @@
 import {useState} from "react";
 
-export const UncontrolledOnOff = () => {
+type PropsType = {
+    defaultValue: boolean
+    onClickHandler: (value: boolean) => void
+}
+export const UncontrolledOnOff = (props: PropsType) => {
 
     const [on, setSwitch] = useState<boolean>(false);
 
@@ -31,10 +35,12 @@ export const UncontrolledOnOff = () => {
 
     const switchOnHandler = () => {
         setSwitch(true)
+        props.onClickHandler(true)
     }
 
     const switchOffHandler = () => {
         setSwitch(false)
+        props.onClickHandler(false)
     }
 
     return (
