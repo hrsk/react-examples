@@ -1,15 +1,31 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Accordion, AccordionWithCallbackValue, AccordionWithPropsValue} from "./components/Accordion";
-import {Rating, RatingValueType, RatingWithCallbackValue, RatingWithPropsValue} from "./components/Rating";
-import {OnOff} from "./components/OnOff";
+import {Accordion} from "./components/accordion/Accordion";
+import {Rating, RatingValueType} from "./components/rating/Rating";
+import {OnOff} from "./components/onoff/OnOff";
+import {UncontrolledOnOff} from "./components/onoff/uncotrolled-onoff/UncontrolledOnOff";
+import {AccordionWithPropsValue} from "./components/accordion/AccordionWithPropsValue";
+import {AccordionWithCallbackValue} from "./components/accordion/AccordionWithCallbackValue";
 import {
-    UncontrolledAccordionWithButton,
-    UncontrolledAccordionWithCallbackValue,
+    UncontrolledAccordionWithButton
+} from "./components/accordion/uncotrolled-accordion/UncontrolledAccordionWithButton";
+import {
+    UncontrolledAccordionWithCallbackValue
+} from "./components/accordion/uncotrolled-accordion/UncontrolledAccordionWithCallbackValue";
+import {
     UncontrolledAccordionWithPropsValue
-} from "./components/UncontrolledAccordion";
-import {UncontrolledRatingWithCallbackValue, UncontrolledRatingWithPropsValue} from "./components/UncontrolledRating";
-import {UncontrolledOnOff} from "./components/UncontrolledOnOff";
+} from "./components/accordion/uncotrolled-accordion/UncontrolledAccordionWithPropsValue";
+import {UncontrolledAccordion} from "./components/accordion/uncotrolled-accordion/UncontrolledAccordion";
+import {PageTitle} from "./components/page-title/PageTitle";
+import {
+    UncontrolledRatingWithCallbackValue
+} from "./components/rating/uncontrolled-rating/UncontrolledRatingWithCallbackValue";
+import {
+    UncontrolledRatingWithPropsValue
+} from "./components/rating/uncontrolled-rating/UncontrolledRatingWithPropsValue";
+import {RatingWithCallbackValue} from "./components/rating/RatingWithCallbackValue";
+import {RatingWithPropsValue} from "./components/rating/RatingWithPropsValue";
+
 
 function App() {
 
@@ -25,19 +41,14 @@ function App() {
             <PageTitle title={'HELLO WORLD!'}/>
 
             <Accordion title={'Accordion'} collapsed={false}/>
-            <AccordionWithPropsValue title={'AccordionWithPropsValue'} collapsed={collapsedWithPropsValue} setCollapsed={setCollapsedWithPropsValue}/>
-            <AccordionWithCallbackValue title={'AccordionWithCallbackValue'} collapsed={collapsedWithCallbackValue} setCollapsed={() => setCollapsed(!collapsedWithCallbackValue)}/>
+            <AccordionWithPropsValue title={'AccordionWithPropsValue'} collapsed={collapsedWithPropsValue}
+                                     setCollapsed={setCollapsedWithPropsValue}/>
+            <AccordionWithCallbackValue title={'AccordionWithCallbackValue'} collapsed={collapsedWithCallbackValue}
+                                        setCollapsed={() => setCollapsed(!collapsedWithCallbackValue)}/>
 
             <Rating value={3}/>
             <RatingWithCallbackValue value={ratingValue} setRatingValue={setRatingValue}/>
             <RatingWithPropsValue value={ratingValue} setRatingValue={setRatingValue}/>
-
-            {/*<Rating value={0}/>*/}
-            {/*<Rating value={1}/>*/}
-            {/*<Rating value={2}/>*/}
-            {/*<Rating value={3}/>*/}
-            {/*<Rating value={4}/>*/}
-            {/*<Rating value={5}/>*/}
 
             <OnOff on={on} setSwitch={setSwitchOn}/>
             <UncontrolledOnOff/>
@@ -45,7 +56,7 @@ function App() {
             <UncontrolledRatingWithPropsValue/>
             <UncontrolledRatingWithCallbackValue/>
 
-            ***
+            <UncontrolledAccordion title={'UncontrolledAccordion'} collapsed={true}/>
             <UncontrolledAccordionWithButton title={'UncontrolledAccordionWithButton'}/>
             <UncontrolledAccordionWithCallbackValue title={'UncontrolledAccordionWithCallbackValue'}/>
             <UncontrolledAccordionWithPropsValue title={'UncontrolledAccordionWithPropsValue'}/>
@@ -54,12 +65,3 @@ function App() {
 }
 
 export default App;
-
-
-type PageTitlePropsType = {
-    title: string
-}
-
-const PageTitle = (props: PageTitlePropsType) => {
-    return <h1>{props.title}</h1>
-}

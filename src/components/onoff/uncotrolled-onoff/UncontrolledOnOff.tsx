@@ -10,7 +10,6 @@ export const UncontrolledOnOff = () => {
         border: 'solid 2px black',
         width: '100px',
         height: '35px',
-        // backgroundColor: props.on ? 'green' : '',
         backgroundColor: on ? 'green' : '',
     }
     const offStyle = {
@@ -19,7 +18,6 @@ export const UncontrolledOnOff = () => {
         border: 'solid 2px black',
         width: '100px',
         height: '35px',
-        // backgroundColor: props.on ? '' : 'red',
         backgroundColor: on ? '' : 'red',
     }
     const indicatorStyle = {
