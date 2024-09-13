@@ -4,7 +4,6 @@ type PropsType = {
 }
 
 export const OnOff = (props: PropsType) => {
-
     const onStyle = {
         display: 'inline-block',
         alignContent: 'center',

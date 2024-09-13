@@ -32,7 +32,7 @@ function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0);
     const [collapsedWithPropsValue, setCollapsedWithPropsValue] = useState<boolean>(false);
     const [collapsedWithCallbackValue, setCollapsed] = useState<boolean>(false);
-    const [on, setSwitchOn] = useState<boolean>(false);
+    // const [on, setSwitchOn] = useState<boolean>(false);
 
 
     return (
@@ -50,7 +50,7 @@ function App() {
             <RatingWithCallbackValue value={ratingValue} setRatingValue={setRatingValue}/>
             <RatingWithPropsValue value={ratingValue} setRatingValue={setRatingValue}/>
 
-            <OnOff on={on} setSwitch={setSwitchOn}/>
+            {/*<OnOff on={on} setSwitch={setSwitchOn}/>*/}
             <UncontrolledOnOff/>
 
             <UncontrolledRatingWithPropsValue/>
